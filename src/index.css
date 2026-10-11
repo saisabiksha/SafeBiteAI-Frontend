@@ -1,0 +1,106 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+
+  /* SafeBiteAI Color System */
+  /* Dark navy text & slate neutrals */
+  --color-navy-950: #0a0f1d;
+  --color-navy-900: #0f172a;
+  --color-navy-800: #1e293b;
+  --color-navy-700: #334155;
+  --color-navy-600: #475569;
+  --color-navy-500: #64748b;
+
+  /* Teal accents: Safety, food allergen health, wellness */
+  --color-teal-accent: #0d9488;
+  --color-teal-accent-hover: #0f766e;
+  --color-teal-accent-light: #14b8a6;
+  --color-teal-accent-subtle: #f0fdfa;
+  --color-teal-accent-border: #ccfbf1;
+
+  /* Light blue accents: Trust, technology, nutrition */
+  --color-blue-accent: #0284c7;
+  --color-blue-accent-hover: #0369a1;
+  --color-blue-accent-light: #38bdf8;
+  --color-blue-accent-subtle: #f0f9ff;
+  --color-blue-accent-border: #e0f2fe;
+
+  /* Surface & Border Colors */
+  --color-surface-white: #ffffff;
+  --color-surface-subtle: #f8fafc;
+  --color-surface-muted: #f1f5f9;
+  --color-surface-border: #e2e8f0;
+  --color-surface-border-light: #f1f5f9;
+
+  /* Shadows: Subtle & card-focused */
+  --shadow-subtle: 0 1px 2px 0 rgb(15 23 42 / 0.04);
+  --shadow-card: 0 4px 6px -1px rgb(15 23 42 / 0.04), 0 2px 4px -2px rgb(15 23 42 / 0.04);
+  --shadow-card-hover: 0 10px 15px -3px rgb(15 23 42 / 0.07), 0 4px 6px -4px rgb(15 23 42 / 0.04);
+  --shadow-card-lg: 0 20px 25px -5px rgb(15 23 42 / 0.06), 0 8px 10px -6px rgb(15 23 42 / 0.04);
+}
+
+@layer base {
+  * {
+    border-color: #e2e8f0;
+    box-sizing: border-box;
+  }
+
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    background-color: #ffffff;
+    color: #0f172a;
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  #root {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+/* Reusable component utilities for SafeBiteAI styling foundation */
+@layer components {
+  .safebite-card {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px -1px rgb(15 23 42 / 0.04), 0 2px 4px -2px rgb(15 23 42 / 0.04);
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .safebite-card:hover {
+    border-color: #cbd5e1;
+    box-shadow: 0 10px 15px -3px rgb(15 23 42 / 0.07), 0 4px 6px -4px rgb(15 23 42 / 0.04);
+  }
+
+  .badge-teal {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.25rem 0.75rem;
+    font-size: 0.8125rem;
+    font-weight: 500;
+    border-radius: 9999px;
+    background-color: #f0fdfa;
+    color: #0d9488;
+    border: 1px solid #ccfbf1;
+  }
+
+  .badge-blue {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.25rem 0.75rem;
+    font-size: 0.8125rem;
+    font-weight: 500;
+    border-radius: 9999px;
+    background-color: #f0f9ff;
+    color: #0284c7;
+    border: 1px solid #e0f2fe;
+  }
+}
